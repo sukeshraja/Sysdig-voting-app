@@ -27,7 +27,6 @@ jobs:
         run: docker build -t worker:${{ github.sha }} ./worker
 
       - name: Scan Worker image
-        id: scan
         uses: sysdiglabs/scan-action@v6
         with:
             image-tag: worker:${{ github.sha }}
@@ -37,7 +36,6 @@ jobs:
         run: docker build -t result:${{ github.sha }} ./result
 
       - name: Scan Result image
-        id: scan
         uses: sysdiglabs/scan-action@v6
         with:
             image-tag: result:${{ github.sha }}
