@@ -65,8 +65,8 @@ jobs:
         run: |
           aws eks update-kubeconfig --region us-east-1 --name sysdig-eks
       
-       - name: Create namespace
-         run: kubectl create namespace voting-app --dry-run=client -o yaml | kubectl apply -f -
+      - name: Create namespace
+        run: kubectl create namespace voting-app --dry-run=client -o yaml | kubectl apply -f -
 
-       - name: Deploy manifests
-         run: kubectl apply -f k8s-specifications/ -n voting-app
+      - name: Deploy manifests
+        run: kubectl apply -f k8s-specifications/ -n voting-app
